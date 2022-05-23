@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="extQuery.js" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+</head>
+<body>
+  <h2>한빛사 논문 추출 쿼리 생성 페이지</h2>
+  <div>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/" target='_blank' style="color:darkcyan; font-size: small; margin: 0;"><b>Pubmed로 바로가기</b></a>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/advanced/" target='_blank' style="color: darkcyan; font-size: small; margin: 0;"><b>Pubmed Advamced로 바로가기</b></a>
+  </div>
+  <h3 style="margin-bottom: 0;">날짜 설정</h3>
+  <input type="text" name="datefilter" value="클릭하여 설정해주세요" /><span style="font-size: small;"><b> 15일 이내로 검색 권장드립니다.</b></span>
+  
+  <h3 style="margin-bottom: 0;">저널 설정</h3>
+  <!-- <input id="allCheck" type="checkbox"/>저널 전체 선택 -->
+  <input id="natureCheck" type="checkbox"/><b>Nature 전체 선택</b><br>
+  <input type="checkbox" name="journalN" value="Nature"/>Nature
+  <input type="checkbox" name="journalN" value="Nature communications"/>Nature communications
+  <input type="checkbox" name="journalN" value="Nature medicine"/>Nature medicine
+  <input type="checkbox" name="journalN" value="Nature biotechnology"/>Nature biotechnology
+  <input type="checkbox" name="journalN" value="Nature genetics"/>Nature genetics
+  <br><input id="cellCheck" type="checkbox"/><b>Cell 전체 선택</b><br> 
+  <input type="checkbox" name="journalC" value="Cell"/>Cell
+  <input type="checkbox" name="journalC" value="Cell death disease"/>Cell death disease
+  <input type="checkbox" name="journalC" value="Cell host microbe"/>Cell host microbe
+  <input type="checkbox" name="journalC" value="Cell reports"/>Cell reports
+  <br>
+  <br><button onclick="getResults()">쿼리 생성 하기</button><button onclick="copyToClipBoard()">복사하기</button>
+  <br><textarea id="resultValue" style="background-color: antiquewhite; width: 800px; height: 500px;">1. 원하는 날짜 및 저널 선택 / 2. 쿼리 생성하기 버튼 클릭 / 3. 복사하기 버튼 클릭</textarea>
+</body>
+</html>
